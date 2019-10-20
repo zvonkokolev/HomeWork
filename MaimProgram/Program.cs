@@ -2,8 +2,6 @@
 using Lists.Entity;
 using Lists.ListLogic;
 using System;
-using System.Collections;
-
 
 namespace MainProgram
 {
@@ -13,13 +11,13 @@ namespace MainProgram
 		{
 			Person[] persons =
 			{
-				new Person { LastName = "Huber", FirstName = "Herman", Age = 27},
-				new Person { LastName = "Adam", FirstName = "Paul", Age = 35},
+				new Person { LastName = "Karlsberger", FirstName = "Herman", Age = 27},
+				new Person { LastName = "Liszt", FirstName = "Franz", Age = 35},
 				new Person { LastName = "Mustermann", FirstName = "Max", Age = 42},
-				new Person { LastName = "Bertold", FirstName = "Brecht", Age = 19},
+				new Person { LastName = "Bertolt", FirstName = "Brecht", Age = 19},
 				new Person ("Maier", "Helmut",  42),
 				new Person ("Müller", "Thomas", 33),
-				new Person ("Huber", "Hans", 27)
+				new Person ("Strauss", "Johann", 27)
 			};
 			Console.WriteLine("Liste unsortiert");
 			PrintOut(persons);
