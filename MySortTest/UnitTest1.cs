@@ -43,9 +43,7 @@ namespace MySortTest
 			//Act
 			Person[] erwartet =
 			{
-				list[0],
-				list[1],
-				list[2]
+				list[0], list[1], list[2]
 			};
 
 			MySort.Sort(list, new PersonAgeComparer());
@@ -66,12 +64,7 @@ namespace MySortTest
 			//Act
 			string[] index = { "Adolf", "Burghard", "Huber", "Maier", "Müller" };
 			MySort.Sort(list);
-			int count = 0;
-			foreach (var item in list)
-			{
-				int i = item.CompareTo(index[count++]);
-				if (i != 0) { break; }
-			}
+
 			//Assert
 			CollectionAssert.AreEqual(list, index);
 		}
@@ -89,9 +82,7 @@ namespace MySortTest
 			//Act
 			Person[] erwartet =
 			{
-				list[2],
-				list[0],
-				list[1]
+				list[2], list[0], list[1]
 			};
 			MySort.Sort(list, new PersonLastNameComparer());
 			//Assert
