@@ -1,8 +1,6 @@
 using Lists.Entity;
 using Lists.ListLogic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections;
 
 namespace MyComparableTest
 {
@@ -43,14 +41,17 @@ namespace MyComparableTest
 			//Act
 			Person[] erwartet =
 			{
-				new Person ("Huber", "Hans", 27),
-				new Person ("Müller", "Thomas", 33),
-				new Person ("Maier", "Helmut",  42)
+				//new Person ("Maier", "Helmut",  42),
+				//new Person ("Müller", "Thomas", 33),
+				//new Person ("Huber", "Hans", 27)
+				list[0],
+				list[1],
+				list[2]
 			};
 			
-			MySort.Sort(list);
+			MySort.Sort(list, new PersonAgeComparer());
 			//Assert
-			Assert.AreEqual(list.ToString(), erwartet.ToString());
+			CollectionAssert.AreEqual(list, erwartet);
 		}
 
 		[TestMethod()]
@@ -67,7 +68,7 @@ namespace MyComparableTest
 			string[] index = { "Adolf", "Burghard", "Huber", "Maier", "Müller" };
 			MySort.Sort(list);
 			//Assert
-			Assert.AreEqual(list.ToString(), index.ToString());
+			CollectionAssert.AreEqual(list, index);
 		}
 	}
 }

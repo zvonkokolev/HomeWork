@@ -43,14 +43,14 @@ namespace MySortTest
 			//Act
 			Person[] erwartet =
 			{
-				new Person ("Huber", "Hans", 27),
-				new Person ("Müller", "Thomas", 33),
-				new Person ("Maier", "Helmut",  42)
+				list[0],
+				list[1],
+				list[2]
 			};
 
-			MySort.Sort(list);
+			MySort.Sort(list, new PersonAgeComparer());
 			//Assert
-			Assert.AreEqual(list.ToString(), erwartet.ToString());
+			CollectionAssert.AreEqual(list, erwartet);
 		}
 
 		[TestMethod()]
@@ -73,7 +73,7 @@ namespace MySortTest
 				if (i != 0) { break; }
 			}
 			//Assert
-			Assert.AreEqual(list.ToString(), index.ToString());
+			CollectionAssert.AreEqual(list, index);
 		}
 
 		[TestMethod()]
@@ -89,13 +89,13 @@ namespace MySortTest
 			//Act
 			Person[] erwartet =
 			{
-				new Person ("Huber", "Hans", 27),
-				new Person ("Maier", "Helmut",  42),
-				new Person ("Müller", "Thomas", 33)
+				list[2],
+				list[0],
+				list[1]
 			};
 			MySort.Sort(list, new PersonLastNameComparer());
 			//Assert
-			Assert.AreEqual(list.ToString(), erwartet.ToString());
+			CollectionAssert.AreEqual(list, erwartet);
 		}
 	}
 }
