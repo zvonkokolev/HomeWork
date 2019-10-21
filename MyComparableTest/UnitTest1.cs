@@ -41,16 +41,7 @@ namespace MyComparableTest
 			//Act
 			Person[] erwartet =
 			{
-<<<<<<< HEAD
-				//new Person ("Maier", "Helmut",  42),
-				//new Person ("Müller", "Thomas", 33),
-				//new Person ("Huber", "Hans", 27)
-				list[0],
-				list[1],
-				list[2]
-=======
 				list[0], list[1], list[2]
->>>>>>> 1feb84a7e16dcdec914439768cdd5b2372358fb4
 			};
 			
 			MySort.Sort(list, new PersonAgeComparer());
